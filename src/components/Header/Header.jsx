@@ -12,7 +12,7 @@ const Header = () => {
     </>
   );
   return (
-    <header className="bg-secondary py-5 ">
+    <header className="bg-info py-5 ">
       <div className="navbar flex-col sm:flex-row container mx-auto">
         <div className="w-full navbar-start">
           <div className="dropdown">
@@ -26,7 +26,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/" className="normal-case tracking-tighter font-semibold text-gray-600 text-4xl">
-            TasteTrove
+            Toytopia
           </Link>
         </div>
 
