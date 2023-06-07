@@ -9,6 +9,7 @@
 -tailwind css
 -daisy ui
 -react router
+-firebase
 
 ## live link
 
