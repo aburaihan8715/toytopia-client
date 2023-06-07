@@ -1,10 +1,61 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { createUserUsingEmailAndPassword, setUser, setError, error } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const registerHandler = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    setError("");
+
+    // password validation
+    if (!/(?=.*?[A-Z])/.test(password)) {
+      setError("Password should be at least one upper case");
+      return;
+    } else if (!/(?=.*?[a-z])/.test(password.trim())) {
+      setError("Password should be at least one lower case English letter");
+      return;
+    } else if (!/(?=.*?[#?!@$%^&*-])/.test(password.trim())) {
+      setError("Password should be at least one special character");
+      return;
+    } else if (!/.{6,}/.test(password.trim())) {
+      setError("Password should be at least 6 character");
+      return;
+    }
+    // simple email validation
+    if (!email.trim().includes("@")) {
+      setError("Email should have @ character!");
+      return;
+    } else if (!email.trim().includes(".com")) {
+      setError("Email should have .com character!");
+      return;
+    }
+    form.reset();
+
+    // create user using email and password
+    createUserUsingEmailAndPassword(email, password)
+      .then((result) => {
+        const user = result.user;
+        alert("User has been created successfully!!");
+        setUser(user);
+        setError("");
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+        console.log(errorMessage);
+      });
+  };
 
   return (
     <div className="py-2">
@@ -22,8 +73,23 @@ const Register = () => {
         </div>
 
         {/* error message */}
+        {error && (
+          <div className="alert alert-error rounded mb-2 max-w-md mx-auto">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span>{error}</span>
+            </div>
+          </div>
+        )}
 
-        <form>
+        <form onSubmit={registerHandler}>
           <div className="space-y-3 max-w-md mx-auto">
             <div className="">
               <input

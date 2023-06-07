@@ -1,12 +1,35 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Header = () => {
+  const { logOut, user, setUser, setError } = useContext(AuthContext);
+
+  const logOutHandler = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+        setUser(null);
+        setError("");
+        console.log("user logged out");
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error.message);
+      });
+  };
+
   // nav items
   const menuItems = (
     <>
       <li>
         <NavLink className="font-semibold rounded uppercase text-gray-600" to="/">
           Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/blogs">
+          Blogs
         </NavLink>
       </li>
     </>
@@ -36,17 +59,25 @@ const Header = () => {
         </div>
 
         <div className="w-full mt-2 sm:mt-0 navbar-end space-x-2">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-12 rounded-full">
-              <img loading="lazy" src="http://placehold.it/50x50" />
-            </div>
-          </label>
+          {user?.uid && (
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-12 rounded-full">
+                <img loading="lazy" src="http://placehold.it/50x50" />
+              </div>
+            </label>
+          )}
 
-          <Link to="/login" className="btn btn-primary w-full sm:w-auto rounded text-gray-600">
-            Login
-          </Link>
+          {!user?.uid && (
+            <Link to="/login" className="btn btn-primary w-full sm:w-auto rounded text-gray-600">
+              Login
+            </Link>
+          )}
 
-          <button className="btn btn-primary rounded text-gray-600">LogOut</button>
+          {user?.uid && (
+            <button onClick={logOutHandler} className="btn btn-primary rounded text-gray-600">
+              LogOut
+            </button>
+          )}
         </div>
       </div>
     </header>

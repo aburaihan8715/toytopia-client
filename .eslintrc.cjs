@@ -6,6 +6,6 @@ module.exports = {
   plugins: ["react-refresh"],
   rules: {
     "react-refresh/only-export-components": "warn",
-    "react/prop-type": "off",
+    "react/prop-types": "off",
   },
 };
