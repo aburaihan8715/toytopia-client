@@ -27,9 +27,28 @@ const Header = () => {
           Home
         </NavLink>
       </li>
+
       <li>
         <NavLink className="font-semibold rounded uppercase text-gray-600" to="/blogs">
           Blogs
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/allToy">
+          All toy
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/myToys">
+          My toys
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/addToy">
+          Add toy
         </NavLink>
       </li>
     </>
@@ -59,7 +78,15 @@ const Header = () => {
         </div>
 
         <div className="w-full mt-2 sm:mt-0 navbar-end space-x-2">
-          {user?.uid && (
+          {user?.photoURL && (
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-12 rounded-full">
+                <img loading="lazy" src={user.photoURL} />
+              </div>
+            </label>
+          )}
+
+          {user && !user?.photoURL && (
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-12 rounded-full">
                 <img loading="lazy" src="http://placehold.it/50x50" />

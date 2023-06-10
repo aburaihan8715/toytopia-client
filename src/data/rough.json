@@ -1,0 +1,202 @@
+[
+  {
+    "toyName": "Mathematics Challenge Set",
+    "toyPhotoUrl": "https://example.com/toy2.jpg",
+    "price": 28,
+    "quantity": 5,
+    "rating": 5,
+    "description": "Introduce your child to the fascinating world of mathematics with the Mathematics Challenge Set. This set includes a variety of engaging math puzzles, number games, and problem-solving activities. It helps develop critical thinking, logical reasoning, and numerical proficiency. By making math enjoyable and interactive, this set encourages children to embrace the beauty of numbers and cultivate a lifelong love for mathematics.",
+    "category": "STEM",
+    "sellerName": "Math Wizards",
+    "sellerEmail": "mathwizards@example.com"
+  },
+  {
+    "toyName": "Science Discovery Lab",
+    "toyPhotoUrl": "https://example.com/toy4.jpg",
+    "price": 39,
+    "quantity": 7,
+    "rating": 4.2,
+    "description": "The Science Discovery Lab is a captivating educational toy that introduces children to the wonders of science through hands-on experiments and discoveries. With a variety of scientific tools, materials, and guided activities, this lab enables kids to explore the realms of chemistry, physics, biology, and more. It sparks curiosity, encourages critical thinking, and nurtures a love for scientific exploration.",
+    "category": "STEM",
+    "sellerName": "SciTech Toys",
+    "sellerEmail": "scitechtoys@example.com"
+  },
+  {
+    "toyName": "Robotics Engineering Kit",
+    "toyPhotoUrl": "https://example.com/toy6.jpg",
+    "price": 64,
+    "quantity": 2,
+    "rating": 4.6,
+    "description": "The Robotics Engineering Kit is an exciting STEM toy that introduces children to the world of robotics and programming. With modular components, sensors, and a programmable controller, kids can build and program their own robots. This kit encourages logical thinking, problem-solving skills, and creativity. It offers an immersive learning experience that combines engineering principles with innovative technology.",
+    "category": "STEM",
+    "sellerName": "TechGenius Toys",
+    "sellerEmail": "techgenius@example.com"
+  },
+  {
+    "toyName": "Coding Master Kit",
+    "toyPhotoUrl": "https://example.com/toy8.jpg",
+    "price": 49,
+    "quantity": 4,
+    "rating": 4.7,
+    "description": "The Coding Master Kit is a comprehensive learning tool that introduces children to the fundamentals of coding and computer programming. With a kid-friendly coding interface, interactive games, and step-by-step lessons, this kit helps kids develop computational thinking, problem-solving skills, and logical reasoning. It empowers them to create their own interactive stories, animations, and games while fostering a passion for technology.",
+    "category": "STEM",
+    "sellerName": "CodeMakers",
+    "sellerEmail": "codemakers@example.com"
+  },
+  {
+    "toyName": "Solar System Planetarium",
+    "toyPhotoUrl": "https://example.com/toy11.jpg",
+    "price": 35,
+    "quantity": 5,
+    "rating": 4.7,
+    "description": "Embark on an interstellar journey with the Solar System Planetarium. This planetarium projector displays a captivating view of the solar system, complete with planets, stars, and constellations. It educates children about the wonders of space, fosters astronomical curiosity, and encourages a love for science. The Solar System Planetarium offers an immersive learning experience that ignites the imagination.",
+    "category": "STEM",
+    "sellerName": "AstroKids",
+    "sellerEmail": "astrokids@example.com"
+  },
+  {
+    "toyName": "Building Blocks Set",
+    "toyPhotoUrl": "https://example.com/toy12.jpg",
+    "price": 22,
+    "quantity": 10,
+    "rating": 4.6,
+    "description": "The Building Blocks Set is a classic toy that promotes creativity, spatial awareness, and fine motor skills. With various shapes and sizes, kids can construct endless structures and let their imagination soar. This set encourages problem-solving, logical thinking, and hand-eye coordination. It's a timeless educational toy that provides hours of open-ended play and learning.",
+    "category": "STEM",
+    "sellerName": "Master Builders",
+    "sellerEmail": "masterbuilders@example.com"
+  },
+
+  {
+    "toyName": "Word Builders Set",
+    "toyPhotoUrl": "https://example.com/toy5.jpg",
+    "price": 19,
+    "quantity": 10,
+    "rating": 4.8,
+    "description": "The Word Builders Set is a fantastic tool for enhancing language and literacy skills in children. It consists of colorful letter blocks and interactive activities that enable kids to construct words, improve spelling, and expand their vocabulary. Through hands-on play, this set promotes phonics awareness, word recognition, and language fluency. It's a fun and effective way to develop strong reading and writing abilities.",
+    "category": "Language and Literacy",
+    "sellerName": "Word Wizards",
+    "sellerEmail": "wordwizards@example.com"
+  },
+  {
+    "toyName": "Exploration Kit 8",
+    "toyPhotoUrl": "https://example.com/toy1.jpg",
+    "price": 51,
+    "quantity": 1,
+    "rating": 4,
+    "description": "The Exploration Kit 8 is a wonderful educational toy that promotes language and literacy skills in children. It includes interactive games, storytelling activities, and vocabulary-building exercises. This kit encourages children to communicate effectively, explore their imagination, and expand their language abilities. With engaging components and thought-provoking challenges, the Exploration Kit 8 provides an exciting learning experience for young minds.",
+    "category": "Language and Literacy",
+    "sellerName": "Poly's Toys",
+    "sellerEmail": "poly@gmail.com"
+  },
+  {
+    "toyName": "Storytelling Puppet Theater",
+    "toyPhotoUrl": "https://example.com/toy13.jpg",
+    "price": 42,
+    "quantity": 4,
+    "rating": 4.5,
+    "description": "Bring stories to life with the Storytelling Puppet Theater. This puppet theater set includes colorful puppets, a stage, and props to create imaginative storytelling performances. It nurtures creativity, language skills, and dramatic expression in children. The Storytelling Puppet Theater provides a platform for interactive play, fostering a love for storytelling and imaginative exploration.",
+    "category": "Language and Literacy",
+    "sellerName": "Creative Kids",
+    "sellerEmail": "creativekids@example.com"
+  },
+  {
+    "toyName": "Magnetic Alphabet Letters",
+    "toyPhotoUrl": "https://example.com/toy15.jpg",
+    "price": 14,
+    "quantity": 8,
+    "rating": 4.8,
+    "description": "The Magnetic Alphabet Letters are a fun and educational way for children to learn letters, spelling, and word formation. With colorful and durable magnetic letters, kids can explore language skills on a magnetic surface. This set promotes letter recognition, fine motor skills, and early literacy development. The Magnetic Alphabet Letters offer endless possibilities for creative and interactive learning.",
+    "category": "Language and Literacy",
+    "sellerName": "Letter Learners",
+    "sellerEmail": "letterlearners@example.com"
+  },
+  {
+    "toyName": "Animal Safari Adventure Set",
+    "toyPhotoUrl": "https://example.com/toy14.jpg",
+    "price": 31,
+    "quantity": 6,
+    "rating": 4.4,
+    "description": "Embark on an exciting animal safari adventure with this comprehensive playset. It includes various animal figurines, a safari vehicle, and props to create a realistic wildlife exploration experience. This set fosters imaginative play, animal recognition, and storytelling skills. The Animal Safari Adventure Set provides hours of entertainment while promoting curiosity and environmental awareness.",
+    "category": "Language and Literacy",
+    "sellerName": "Wild Explorers",
+    "sellerEmail": "wildexplorers@example.com"
+  },
+  {
+    "toyName": "Geography Adventure Globe",
+    "toyPhotoUrl": "https://example.com/toy7.jpg",
+    "price": 29,
+    "quantity": 6,
+    "rating": 4.4,
+    "description": "Embark on a geographical adventure with the Geography Adventure Globe. This interactive globe features fascinating facts, quizzes, and augmented reality experiences that make learning about countries, continents, and landmarks engaging and fun. It ignites a sense of curiosity about the world, promotes global awareness, and helps children develop a deeper understanding of our planet's diverse cultures and environments.",
+    "category": "Language and Literacy",
+    "sellerName": "GeoExplorers",
+    "sellerEmail": "geoexplorers@example.com"
+  },
+
+  {
+    "toyName": "Music Maestro Keyboard",
+    "toyPhotoUrl": "https://example.com/toy9.jpg",
+    "price": 59,
+    "quantity": 3,
+    "rating": 4.3,
+    "description": "Unleash the inner musician with the Music Maestro Keyboard. This electronic keyboard is designed to introduce children to the world of music and inspire their musical talents. With built-in lessons, various instrument sounds, and rhythm accompaniments, it enables kids to learn and play their favorite melodies. The Music Maestro Keyboard cultivates a love for music, enhances coordination, and boosts creativity.",
+    "category": "Creative Arts and Crafts",
+    "sellerName": "Melody Makers",
+    "sellerEmail": "melodymakers@example.com"
+  },
+  {
+    "toyName": "Artistic Masterpieces Studio",
+    "toyPhotoUrl": "https://example.com/toy3.jpg",
+    "price": 45,
+    "quantity": 3,
+    "rating": 4.5,
+    "description": "Unleash your child's creativity with the Artistic Masterpieces Studio. This comprehensive art kit includes a variety of high-quality art supplies such as paints, brushes, canvas, and more. It provides a platform for young artists to explore different art techniques, express their imagination, and create their own masterpieces. With step-by-step instructions and inspirational ideas, this studio encourages artistic growth and fosters a passion for the visual arts.",
+    "category": "Creative Arts and Crafts",
+    "sellerName": "Artistic Expressions",
+    "sellerEmail": "artexpress@example.com"
+  },
+  {
+    "toyName": "Chemistry Lab Starter Set",
+    "toyPhotoUrl": "https://example.com/toy16.jpg",
+    "price": 49,
+    "quantity": 3,
+    "rating": 4.6,
+    "description": "The Chemistry Lab Starter Set is perfect for young scientists eager to explore the wonders of chemistry. It includes essential lab equipment, safety goggles, and a variety of safe chemical compounds for conducting exciting experiments. This set introduces kids to basic chemistry principles, encourages scientific thinking, and sparks a passion for discovery. The Chemistry Lab Starter Set offers a hands-on learning experience that brings science to life.",
+    "category": "Creative Arts and Crafts",
+    "sellerName": "Science Explorers",
+    "sellerEmail": "scienceexplorers@example.com"
+  },
+  {
+    "toyName": "Dinosaur Excavation Kit",
+    "toyPhotoUrl": "https://example.com/toy18.jpg",
+    "price": 19,
+    "quantity": 5,
+    "rating": 4.5,
+    "description": "Unleash the inner paleontologist with the Dinosaur Excavation Kit. This kit includes a fossilized dinosaur skeleton buried in an excavation block, along with digging tools and a brush. It provides a hands-on experience of uncovering dinosaur bones and learning about prehistoric creatures. The Dinosaur Excavation Kit encourages patience, scientific curiosity, and a love for history.",
+    "category": "Creative Arts and Crafts",
+    "sellerName": "Dino Discoveries",
+    "sellerEmail": "dinodiscoveries@example.com"
+  },
+  {
+    "toyName": "Wooden Puzzle Set",
+    "toyPhotoUrl": "https://example.com/toy17.jpg",
+    "price": 18,
+    "quantity": 10,
+    "rating": 4.7,
+    "description": "The Wooden Puzzle Set is a collection of beautifully crafted puzzles that promote cognitive development, problem-solving skills, and hand-eye coordination. With different themes and varying difficulty levels, kids can enjoy assembling and discovering new patterns. This set provides a screen-free alternative for entertainment and learning, fostering patience, concentration, and a sense of accomplishment.",
+    "category": "Creative Arts and Crafts",
+    "sellerName": "Puzzle Masters",
+    "sellerEmail": "puzzlemasters@example.com"
+  },
+  {
+    "toyName": "Shape Sorting Puzzle",
+    "toyPhotoUrl": "https://example.com/toy10.jpg",
+    "price": 12,
+    "quantity": 8,
+    "rating": 4.9,
+    "description": "The Shape Sorting Puzzle is an educational toy that helps children develop shape recognition, hand-eye coordination, and problem-solving skills. With vibrant colors and various shapes, kids can match and sort the pieces to the corresponding slots. This puzzle encourages logical thinking, fine motor skills, and cognitive development in a fun and interactive way.",
+    "category": "Creative Arts and Crafts",
+    "sellerName": "Little Learners",
+    "sellerEmail": "littlelearners@example.com"
+  }
+]

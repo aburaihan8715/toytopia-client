@@ -6,7 +6,11 @@ import Register from "../pages/Register/Register";
 import NotFound from "../pages/NotFound/NotFound";
 import ForgetPassword from "../pages/ForgetPassword/ForgetPassword";
 import Blogs from "../pages/Blogs/Blogs";
-import PrivateRoute from "./PrivateRoute";
+import MyToys from "../pages/MyToys/MyToys";
+import AddToy from "../pages/AddToy/AddToy";
+import AllToy from "../pages/AllToy/AllToy";
+import ShopByCategory from "../pages/Home/ShopByCategory/ShopByCategory";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +36,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs",
-        element: (
-          <PrivateRoute>
-            <Blogs></Blogs>
-          </PrivateRoute>
-        ),
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "/allToy",
+        element: <AllToy></AllToy>,
+        loader: () => fetch("http://localhost:5000/toys"),
+      },
+      {
+        path: "/myToys",
+        element: <MyToys></MyToys>,
+      },
+      {
+        path: "/addToy",
+        element: <AddToy></AddToy>,
+      },
+      {
+        path: "/shopByCategory",
+        element: <ShopByCategory></ShopByCategory>,
+      },
+      {
+        path: "/viewDetails/:id",
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`),
       },
     ],
   },
