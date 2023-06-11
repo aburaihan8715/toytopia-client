@@ -8,11 +8,10 @@ const MyToys = () => {
   const [toysData, setToysData] = useState([]);
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
-
   useTitle("MyToys");
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://toytopia-server-xi.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
