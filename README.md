@@ -6,10 +6,10 @@
 
 ## packages have been used
 
--tailwind css
--daisy ui
--react router
--firebase
+- tailwind css
+- daisy ui
+- react router
+- firebase
 
 ## live link
 
