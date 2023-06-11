@@ -54,7 +54,7 @@ const MyToysRow = (props) => {
       <td>{category}</td>
       <td>{sellerName}</td>
       <td className="space-x-2">
-        <Link>
+        <Link to={`/updateToy/${_id}`}>
           <button className="btn btn-accent btn-xs">update</button>
         </Link>
         <div className="inline-block">
