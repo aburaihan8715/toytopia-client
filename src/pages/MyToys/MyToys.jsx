@@ -2,11 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import MyToysRow from "./MyToysRow";
 import { AuthContext } from "../../contexts/AuthProvider";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const [toysData, setToysData] = useState([]);
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
+
+  useTitle("MyToys");
 
   useEffect(() => {
     fetch("http://localhost:5000/toys")

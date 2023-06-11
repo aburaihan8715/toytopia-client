@@ -3,11 +3,12 @@ import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUserUsingEmailAndPassword, setUser, setError, error } = useContext(AuthContext);
-
+  useTitle("Register");
   const navigate = useNavigate();
 
   const registerHandler = (event) => {

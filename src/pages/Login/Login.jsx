@@ -3,10 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../../contexts/AuthProvider";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { loginUsingEmailAndPassword, setUser, setError, error } = useContext(AuthContext);
+  useTitle("Login");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,7 +30,7 @@ const Login = () => {
         alert("Login success!!");
         setUser(user);
         setError("");
-        navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;

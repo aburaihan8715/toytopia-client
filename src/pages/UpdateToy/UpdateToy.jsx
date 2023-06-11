@@ -2,11 +2,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
   const [toyData, setToyData] = useState({});
   const data = useLoaderData();
   const { price, quantity, description, _id, toyName } = data;
+  useTitle("UpdateToy");
 
   const changeHandler = (event) => {
     const value = event.target.value;

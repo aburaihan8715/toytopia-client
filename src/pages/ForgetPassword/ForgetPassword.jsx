@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../contexts/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 const auth = getAuth(app);
 
 const ForgetPassword = () => {
   const { setError, error } = useContext(AuthContext);
   const navigate = useNavigate();
+  useTitle("ForgetPassword");
 
   const forgetPasswordSubmitHandler = (event) => {
     event.preventDefault();

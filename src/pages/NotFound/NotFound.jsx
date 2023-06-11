@@ -1,8 +1,10 @@
 import { useNavigate, useRouteError } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const NotFound = () => {
   const error = useRouteError();
   const navigate = useNavigate();
+  useTitle("NotFound");
 
   return (
     <div className="container mx-auto">

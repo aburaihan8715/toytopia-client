@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../hooks/useTitle";
 
 const AddToy = () => {
   const [toy, setToy] = useState({});
   const { user } = useContext(AuthContext);
+  useTitle("AddToy");
 
   const blurHandler = (event) => {
     const value = event.target.value;
