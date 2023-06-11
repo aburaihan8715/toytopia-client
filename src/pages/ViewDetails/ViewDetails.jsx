@@ -2,14 +2,14 @@ import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
   const data = useLoaderData();
-  const { toyName, sellerName, sellerEmail, price, rating, quantity, description } = data;
+  const { toyName, sellerName, sellerEmail, price, rating, quantity, description, toyPhotoUrl } = data;
   console.log(data);
   return (
     <div>
       <div>
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row space-x-4">
-            <img src="http://placehold.it/400x400" className="w-full max-w-xl rounded-lg shadow-2xl" />
+            <img src={toyPhotoUrl} className="w-full max-w-xl rounded-lg shadow-xl" />
 
             <div className="max-w-2xl space-y-3">
               <div className="space-y-3">

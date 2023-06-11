@@ -1,9 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import ToyRow from "./ToyRow";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 const AllToy = () => {
   const toyData = useLoaderData();
-  console.log(toyData);
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
   return (
     <div className="">
       <div className="overflow-x-auto">

@@ -1,8 +1,17 @@
-Social and Emotional Learning Toys:
-STEM stands for Science, Technology, Engineering, and Mathematics. This sub-category can include a wide range of toys that promote learning and exploration in these fields. Examples of STEM toys include building sets, robotics kits, coding toys, science experiment kits, and math puzzles. These toys aim to develop problem-solving skills, critical thinking, creativity, and an interest in scientific concepts.
-
-Language and Literacy Toys:
-This sub-category focuses on toys that enhance language skills, reading, and literacy development. It can include toys such as alphabet and spelling games, phonics toys, storytelling kits, word puzzles, and foreign language learning toys. These toys help children improve their vocabulary, reading comprehension, spelling, and overall language proficiency.
-
-Creative Arts and Crafts:
-This sub-category emphasizes toys that encourage artistic expression, creativity, and fine motor skills. It can include art supplies like paints, brushes, colored pencils, and sketchbooks, as well as craft kits for activities such as painting, drawing, sculpting, jewelry making, and DIY projects. These toys foster imagination, self-expression, hand-eye coordination, and fine motor skill development.
+// toys image links
+https://i.ibb.co/cJ7WvB0/toy1.jpg
+https://i.ibb.co/JQq5VK0/toy2.jpg
+https://i.ibb.co/N2y7qHG/toy3.jpg
+https://i.ibb.co/x3s8kht/toy4.jpg
+https://i.ibb.co/G30XKn5/toy5.jpg
+https://i.ibb.co/VM0F1Jc/toy6.jpg
+https://i.ibb.co/MV0F4wt/toy7.jpg
+https://i.ibb.co/ph3VDkc/toy8.jpg
+https://i.ibb.co/5jRGcfz/toy9.jpg
+https://i.ibb.co/02QSyZ2/toy10.jpg
+https://i.ibb.co/zf4cxb1/toy11.jpg
+https://i.ibb.co/qgrkcBz/toy12.jpg
+https://i.ibb.co/tQV5gBv/toy13.jpg
+https://i.ibb.co/8sVNbSm/toy14.jpg
+https://i.ibb.co/C8nz7Rd/toy15.jpg
+https://i.ibb.co/Kjvfkgt/toy16.jpg

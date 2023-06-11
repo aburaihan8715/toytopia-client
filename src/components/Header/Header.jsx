@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import logo from "../../assets/images/logo/toytopia-logo.png";
 
 const Header = () => {
   const { logOut, user, setUser, setError } = useContext(AuthContext);
@@ -22,39 +23,43 @@ const Header = () => {
   // nav items
   const menuItems = (
     <>
-      <li>
-        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/">
+      <li className="">
+        <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/">
           Home
         </NavLink>
       </li>
 
       <li>
-        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/blogs">
+        <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/blogs">
           Blogs
         </NavLink>
       </li>
 
       <li>
-        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/allToy">
+        <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/allToy">
           All toy
         </NavLink>
       </li>
 
-      <li>
-        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/myToys">
-          My toys
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/myToys">
+            My toys
+          </NavLink>
+        </li>
+      )}
 
-      <li>
-        <NavLink className="font-semibold rounded uppercase text-gray-600" to="/addToy">
-          Add toy
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/addToy">
+            Add toy
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
-    <header className="bg-info py-5 ">
+    <header className="bg-neutral-200">
       <div className="navbar flex-col sm:flex-row container mx-auto">
         <div className="w-full navbar-start">
           <div className="dropdown">
@@ -67,8 +72,8 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to="/" className="normal-case tracking-tighter font-semibold text-gray-600 text-4xl">
-            Toytopia
+          <Link to="/" className="">
+            <img className="h-20 " src={logo} alt="logo" />
           </Link>
         </div>
 
@@ -79,7 +84,7 @@ const Header = () => {
 
         <div className="w-full mt-2 sm:mt-0 navbar-end space-x-2">
           {user?.photoURL && (
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <label title={user.displayName} tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-12 rounded-full">
                 <img loading="lazy" src={user.photoURL} />
               </div>
@@ -87,7 +92,7 @@ const Header = () => {
           )}
 
           {user && !user?.photoURL && (
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <label title={user.displayName} tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-12 rounded-full">
                 <img loading="lazy" src="http://placehold.it/50x50" />
               </div>
@@ -95,13 +100,13 @@ const Header = () => {
           )}
 
           {!user?.uid && (
-            <Link to="/login" className="btn btn-primary w-full sm:w-auto rounded text-gray-600">
+            <Link to="/login" className="btn btn-accent w-full sm:w-auto rounded text-white">
               Login
             </Link>
           )}
 
           {user?.uid && (
-            <button onClick={logOutHandler} className="btn btn-primary rounded text-gray-600">
+            <button onClick={logOutHandler} className="btn btn-accent rounded text-white">
               LogOut
             </button>
           )}

@@ -6,7 +6,7 @@ import LoadingSpinner from "../../../components/LoadingSpinner/LoadingSpinner";
 
 const ShopByCategory = () => {
   const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:5000/toys")
@@ -30,7 +30,7 @@ const ShopByCategory = () => {
     <div className="py-8">
       <div className="container mx-auto">
         <div className="text-center">
-          <h2 className="inline-block text-3xl underline underline-offset-8 uppercase">Shop by category</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Shop by category</h2>
         </div>
 
         <Tabs forceRenderTabPanel defaultIndex={1}>
@@ -44,9 +44,9 @@ const ShopByCategory = () => {
             <div className="mt-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {stemCategory?.map((item) => (
-                  <div key={item._id} className="card  glass">
-                    <figure className="">
-                      <img className="w-full" src="http://placehold.it/400x250" alt="car!" />
+                  <div key={item._id} className="card border rounded-lg">
+                    <figure className="h-60">
+                      <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="toy" />
                     </figure>
                     <div className="card-body">
                       <h2 className="card-title">{item.toyName}</h2>
@@ -54,7 +54,7 @@ const ShopByCategory = () => {
                       <p>Rating : {item.rating}</p>
                       <div className="card-actions justify-end">
                         <Link to={`/viewDetails/${item._id}`}>
-                          <button className="btn btn-primary">view details</button>
+                          <button className="btn btn-accent">view details</button>
                         </Link>
                       </div>
                     </div>
@@ -68,9 +68,9 @@ const ShopByCategory = () => {
             <div className="mt-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {creativeArtsAndCraftsCategory?.map((item) => (
-                  <div key={item._id} className="card  glass">
-                    <figure>
-                      <img className="w-full" src="http://placehold.it/400x250" alt="car!" />
+                  <div key={item._id} className="card border rounded-lg">
+                    <figure className="h-60">
+                      <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
                     </figure>
                     <div className="card-body">
                       <h2 className="card-title">{item.toyName}</h2>
@@ -78,7 +78,7 @@ const ShopByCategory = () => {
                       <p>Rating : {item.rating}</p>
                       <div className="card-actions justify-end">
                         <Link to={`/viewDetails/${item._id}`}>
-                          <button className="btn btn-primary">view details</button>
+                          <button className="btn btn-accent">view details</button>
                         </Link>
                       </div>
                     </div>
@@ -92,9 +92,9 @@ const ShopByCategory = () => {
             <div className="mt-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {languageAndLiteracyCategory?.map((item) => (
-                  <div key={item._id} className="card  glass">
-                    <figure>
-                      <img className="w-full" src="http://placehold.it/400x250" alt="car!" />
+                  <div key={item._id} className="card border rounded-lg">
+                    <figure className="h-60">
+                      <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
                     </figure>
                     <div className="card-body">
                       <h2 className="card-title">{item.toyName}</h2>
@@ -102,7 +102,7 @@ const ShopByCategory = () => {
                       <p>Rating : {item.rating}</p>
                       <div className="card-actions justify-end">
                         <Link to={`/viewDetails/${item._id}`}>
-                          <button className="btn btn-primary">view details</button>
+                          <button className="btn btn-accent">view details</button>
                         </Link>
                       </div>
                     </div>

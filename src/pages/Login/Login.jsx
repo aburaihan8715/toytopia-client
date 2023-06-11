@@ -19,6 +19,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    setError("");
 
     // login user using email and password
     loginUsingEmailAndPassword(email, password)
@@ -40,12 +41,15 @@ const Login = () => {
   return (
     <div className="py-3">
       <div className="container mx-auto">
-        <h1 className="text-4xl text-gray-700 uppercase text-center mb-4">Login</h1>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">login</h2>
+        </div>
+
         <div className="text-center mb-2">
           <small>
             New user?
-            <Link className="text-blue-600" to="/register">
-              Register
+            <Link className="text-accent" to="/register">
+              <strong> Register </strong>
             </Link>
             here.
           </small>
@@ -53,7 +57,7 @@ const Login = () => {
 
         {/* error message */}
         {error && (
-          <div className="alert alert-error rounded mb-2 max-w-md mx-auto">
+          <div className="alert alert-error rounded mb-2 max-w-lg mx-auto">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path
@@ -69,10 +73,10 @@ const Login = () => {
         )}
 
         <form onSubmit={loginHandler}>
-          <div className="space-y-3 max-w-md mx-auto">
+          <div className="space-y-3 max-w-lg mx-auto">
             <div className="">
               <input
-                className="border border-primary rounded p-3 w-full focus:outline-none focus:ring-2 ring-primary"
+                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
                 type="email"
                 name="email"
                 id="email"
@@ -83,7 +87,7 @@ const Login = () => {
 
             <div className="relative">
               <input
-                className="border border-primary rounded p-3 w-full focus:outline-none focus:ring-2 ring-primary"
+                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -97,21 +101,21 @@ const Login = () => {
             </div>
 
             <div className="text-right">
-              <button className="btn btn-primary w-full rounded text-gray-600" type="submit">
+              <button className="btn btn-accent w-full rounded text-white" type="submit">
                 Login
               </button>
             </div>
 
             <div className="text-end">
-              <small className="text-blue-700">
-                <Link to="/forgetPassword">Forget Password?</Link>
+              <small className="text-accent">
+                <Link to="/forgetPassword">
+                  <strong>Forget Password?</strong>
+                </Link>
               </small>
             </div>
-
-            {/* error message */}
           </div>
         </form>
-        <div className="divider">OR</div>
+        <div className="divider max-w-lg mx-auto">OR</div>
 
         {/* social login */}
         <SocialLogin></SocialLogin>
