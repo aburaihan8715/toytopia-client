@@ -9,7 +9,7 @@ const MyToys = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toys`)
+    fetch(`https://toytopia-server-xi.vercel.app/toys`)
       .then((res) => res.json())
       .then((data) => {
         setToysData(data);

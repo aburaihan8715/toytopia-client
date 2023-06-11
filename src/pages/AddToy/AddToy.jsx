@@ -27,7 +27,7 @@ const AddToy = () => {
       sellerEmail: toy.email,
       description: toy.description,
     };
-    fetch("http://localhost:5000/toys", {
+    fetch("https://toytopia-server-xi.vercel.app/toys", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
