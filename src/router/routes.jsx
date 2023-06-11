@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/allToy",
         element: <AllToy></AllToy>,
-        loader: () => fetch("https://toytopia-server-xi.vercel.app/toys"),
+        loader: () => fetch("http://localhost:5000/toys"),
       },
       {
         path: "/myToys",
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
             <ViewDetails></ViewDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`https://toytopia-server-xi.vercel.app/toys/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`),
       },
     ],
   },

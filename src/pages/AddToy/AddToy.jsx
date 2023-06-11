@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddToy = () => {
   const [toy, setToy] = useState({});
@@ -27,7 +29,7 @@ const AddToy = () => {
       sellerEmail: toy.email,
       description: toy.description,
     };
-    fetch("https://toytopia-server-xi.vercel.app/toys", {
+    fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -37,8 +39,11 @@ const AddToy = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Toy has been added successfully!");
+          toast.success("Toy added successfully!", {
+            position: "top-center",
+          });
         }
+        event.target.reset();
       })
       .catch((err) => {
         console.log(err.message);
@@ -137,12 +142,14 @@ const AddToy = () => {
                   placeholder="Enter seller email"
                   required
                   defaultValue={user?.email}
-                  readOnly
                 />
 
-                <button className="btn btn-primary w-full text-gray-600 order-10" type="submit">
-                  Add
-                </button>
+                <div className="order-10">
+                  <button className="btn btn-primary w-full text-gray-600" type="submit">
+                    Add
+                  </button>
+                  <ToastContainer></ToastContainer>
+                </div>
               </div>
 
               {/* error message */}

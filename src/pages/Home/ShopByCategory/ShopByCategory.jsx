@@ -9,7 +9,7 @@ const ShopByCategory = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://toytopia-server-xi.vercel.app/toys")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -49,7 +49,7 @@ const ShopByCategory = () => {
                       <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="toy" />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">{item.toyName}</h2>
+                      <h2 className="card-title capitalize">{item.toyName}</h2>
                       <p>Price : {item.price}</p>
                       <p>Rating : {item.rating}</p>
                       <div className="card-actions justify-end">
@@ -73,7 +73,7 @@ const ShopByCategory = () => {
                       <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">{item.toyName}</h2>
+                      <h2 className="card-title capitalize">{item.toyName}</h2>
                       <p>Price : {item.price}</p>
                       <p>Rating : {item.rating}</p>
                       <div className="card-actions justify-end">
@@ -97,7 +97,7 @@ const ShopByCategory = () => {
                       <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">{item.toyName}</h2>
+                      <h2 className="card-title capitalize">{item.toyName}</h2>
                       <p>Price : {item.price}</p>
                       <p>Rating : {item.rating}</p>
                       <div className="card-actions justify-end">

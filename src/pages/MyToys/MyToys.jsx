@@ -9,9 +9,10 @@ const MyToys = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://toytopia-server-xi.vercel.app/toys`)
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setToysData(data);
         setLoading(false);
       })
@@ -45,7 +46,7 @@ const MyToys = () => {
           <tbody>
             {/* row  */}
             {myToysData.map((myToyData) => (
-              <MyToysRow key={myToyData._id} myToyData={myToyData}></MyToysRow>
+              <MyToysRow key={myToyData._id} myToyData={myToyData} toysData={toysData} setToysData={setToysData}></MyToysRow>
             ))}
             {/* row  */}
           </tbody>

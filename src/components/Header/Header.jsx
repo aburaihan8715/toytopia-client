@@ -9,7 +9,7 @@ const Header = () => {
   const logOutHandler = () => {
     logOut()
       .then(() => {
-        // Sign-out successful.
+        // Sign-out success
         setUser(null);
         setError("");
         console.log("user logged out");
