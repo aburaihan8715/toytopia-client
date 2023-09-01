@@ -26,7 +26,7 @@ const UpdateToy = () => {
       price: toyData.price,
       description: toyData.description,
     };
-    fetch(`http://localhost:5000/toys/${_id}`, {
+    fetch(`https://toytopia-server-xi.vercel.app/toys/${_id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
