@@ -9,7 +9,7 @@ const ShopByCategory = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://toytopia-server-xi.vercel.app/toys")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -28,7 +28,7 @@ const ShopByCategory = () => {
   }
   return (
     <div className="py-8">
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center">
           <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Shop by category</h2>
         </div>

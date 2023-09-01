@@ -22,7 +22,7 @@ const SocialLogin = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="max-w-5xl mx-auto px-2">
       {/* google login */}
       <div className="text-center mt-4 flex justify-center">
         <div className="text-center">

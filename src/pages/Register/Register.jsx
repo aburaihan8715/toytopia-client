@@ -79,7 +79,7 @@ const Register = () => {
 
   return (
     <div className="py-4">
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">register</h2>
         </div>

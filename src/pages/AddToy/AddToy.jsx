@@ -31,7 +31,7 @@ const AddToy = () => {
       sellerEmail: toy.email,
       description: toy.description,
     };
-    fetch("https://toytopia-server-xi.vercel.app/toys", {
+    fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -54,7 +54,7 @@ const AddToy = () => {
 
   return (
     <div className="py-8">
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Add Toy</h2>
         </div>

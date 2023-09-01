@@ -34,7 +34,7 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="max-w-5xl mx-auto">
       <div className="max-w-lg mx-auto">
         <div className="mt-8">
           <div className="text-center mb-8">

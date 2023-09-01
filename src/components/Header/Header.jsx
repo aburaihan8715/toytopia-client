@@ -24,26 +24,26 @@ const Header = () => {
   const menuItems = (
     <>
       <li className="">
-        <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/">
+        <NavLink className="" to="/">
           Home
         </NavLink>
       </li>
 
       <li>
-        <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/blogs">
+        <NavLink className="" to="/blogs">
           Blogs
         </NavLink>
       </li>
 
       <li>
-        <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/allToy">
+        <NavLink className="" to="/allToy">
           All toy
         </NavLink>
       </li>
 
       {user && (
         <li>
-          <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/myToys">
+          <NavLink className="" to="/myToys">
             My toys
           </NavLink>
         </li>
@@ -51,7 +51,7 @@ const Header = () => {
 
       {user && (
         <li>
-          <NavLink className="rounded px-6 py-3.5 uppercase font-medium hover:bg-accent hover: visited:bg-accent duration-300" to="/addToy">
+          <NavLink className="" to="/addToy">
             Add toy
           </NavLink>
         </li>
@@ -59,8 +59,8 @@ const Header = () => {
     </>
   );
   return (
-    <header className="bg-neutral-200">
-      <div className="navbar flex-col sm:flex-row container mx-auto">
+    <header className="bg-neutral-200 fixed top-0 left-0 right-0 z-20 h-20 px-2 sm:px-5">
+      <div className="navbar flex-col sm:flex-row">
         <div className="w-full navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-primary lg:hidden">
@@ -73,7 +73,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/" className="">
-            <img className="h-20 " src={logo} alt="logo" />
+            <img className="h-14" src={logo} alt="logo" />
           </Link>
         </div>
 

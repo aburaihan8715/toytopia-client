@@ -42,7 +42,7 @@ const Login = () => {
 
   return (
     <div className="py-3">
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">login</h2>
         </div>

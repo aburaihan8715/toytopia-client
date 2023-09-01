@@ -26,7 +26,7 @@ const UpdateToy = () => {
       price: toyData.price,
       description: toyData.description,
     };
-    fetch(`https://toytopia-server-xi.vercel.app/toys/${_id}`, {
+    fetch(`http://localhost:5000/toys/${_id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -49,7 +49,7 @@ const UpdateToy = () => {
 
   return (
     <div className="py-8">
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">update toy</h2>
         </div>

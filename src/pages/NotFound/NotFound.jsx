@@ -7,7 +7,7 @@ const NotFound = () => {
   useTitle("NotFound");
 
   return (
-    <div className="container mx-auto">
+    <div className="max-w-5xl mx-auto">
       <div className="">
         <small onClick={() => navigate(-1)} className="text-blue-700 cursor-pointer">
           Go back

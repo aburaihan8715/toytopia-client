@@ -3,10 +3,10 @@ import contactUsImg from "../../../assets/images/contact/contact-us.png";
 const ContactUs = () => {
   return (
     <div className="bg-base-200 py-8">
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="">
           <div className="grid sm:grid-cols-2 gap-8">
-            <div className="p-8">
+            <div className="p-8" data-aos="flip-right">
               <img loading="lazy" className="max-w-full" src={contactUsImg} alt="email" />
             </div>
 

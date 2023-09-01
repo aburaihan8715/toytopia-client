@@ -10,7 +10,7 @@ const MyToysRow = (props) => {
   const deleteHandler = (id) => {
     const agree = window.confirm("Sure! want to delete?");
     if (agree) {
-      fetch(`https://toytopia-server-xi.vercel.app/toys/${id}`, {
+      fetch(`http://localhost:5000/toys/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
