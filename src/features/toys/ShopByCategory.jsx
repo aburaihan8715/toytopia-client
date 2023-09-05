@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import LoadingSpinner from "../../../components/LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "../../ui/LoadingSpinner";
 
 const ShopByCategory = () => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://toytopia-server-xi.vercel.app/toys")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

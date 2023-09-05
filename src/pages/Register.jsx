@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthProvider";
-import SocialLogin from "../../components/SocialLogin/SocialLogin";
-import useTitle from "../../hooks/useTitle";
+import { AuthContext } from "../contexts/AuthProvider";
+import SocialLogin from "../features/authentication/SocialLogin";
+import useTitle from "../hooks/useTitle";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);

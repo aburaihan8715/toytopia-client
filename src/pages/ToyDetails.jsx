@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
-import useTitle from "../../hooks/useTitle";
+import useTitle from "../hooks/useTitle";
 
-const ViewDetails = () => {
+const ToyDetails = () => {
   const data = useLoaderData();
   const { toyName, sellerName, sellerEmail, price, rating, quantity, description, toyPhotoUrl } = data;
   useTitle("ViewDetails");
@@ -47,4 +47,4 @@ const ViewDetails = () => {
   );
 };
 
-export default ViewDetails;
+export default ToyDetails;

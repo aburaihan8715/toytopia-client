@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import app from "../../firebase/firebase.config";
-import { AuthContext } from "../../contexts/AuthProvider";
-import useTitle from "../../hooks/useTitle";
+import app from "../firebase/firebase.config";
+import { AuthContext } from "../contexts/AuthProvider";
+import useTitle from "../hooks/useTitle";
 const auth = getAuth(app);
 
 const ForgetPassword = () => {

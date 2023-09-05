@@ -1,7 +1,8 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
-import ToyRow from "./ToyRow";
-import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
-import useTitle from "../../hooks/useTitle";
+
+import useTitle from "../hooks/useTitle";
+import LoadingSpinner from "../ui/LoadingSpinner";
+import ToyRow from "../features/toys/ToyRow";
 
 const AllToy = () => {
   const toyData = useLoaderData();

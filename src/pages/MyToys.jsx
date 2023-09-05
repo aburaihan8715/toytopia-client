@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import MyToysRow from "./MyToysRow";
-import { AuthContext } from "../../contexts/AuthProvider";
-import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
-import useTitle from "../../hooks/useTitle";
+import MyToysRow from "../features/toys/MyToysRow";
+import { AuthContext } from "../contexts/AuthProvider";
+import LoadingSpinner from "../ui/LoadingSpinner";
+import useTitle from "../hooks/useTitle";
 
 const MyToys = () => {
   const [toysData, setToysData] = useState([]);
@@ -11,7 +11,7 @@ const MyToys = () => {
   useTitle("MyToys");
 
   useEffect(() => {
-    fetch("https://toytopia-server-xi.vercel.app/toys")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

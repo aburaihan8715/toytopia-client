@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthProvider";
-import logo from "../../assets/images/logo/toytopia-logo.png";
+import { AuthContext } from "../contexts/AuthProvider";
+import logo from "../assets/images/logo/toytopia-logo.png";
 
 const Header = () => {
   const { logOut, user, setUser, setError } = useContext(AuthContext);

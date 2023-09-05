@@ -1,42 +1,47 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../contexts/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
-import useTitle from "../../hooks/useTitle";
+import useTitle from "../hooks/useTitle";
 
-const UpdateToy = () => {
-  const [toyData, setToyData] = useState({});
-  const data = useLoaderData();
-  const { price, quantity, description, _id, toyName } = data;
-  useTitle("UpdateToy");
+const AddToy = () => {
+  const [toy, setToy] = useState({});
+  const { user } = useContext(AuthContext);
+  useTitle("AddToy");
 
-  const changeHandler = (event) => {
+  const blurHandler = (event) => {
     const value = event.target.value;
     const field = event.target.name;
-    const newToyData = { ...toyData };
-    newToyData[field] = value;
-    setToyData(newToyData);
+    const newToy = { ...toy };
+    newToy[field] = value;
+    setToy(newToy);
   };
 
-  const updateToyHandler = (event) => {
+  const addToyHandler = (event) => {
     event.preventDefault();
-
-    const updatedToy = {
-      quantity: toyData.quantity,
-      price: toyData.price,
-      description: toyData.description,
+    console.log(toy);
+    const toyData = {
+      toyName: toy.toyName,
+      toyPhotoUrl: toy.photo,
+      price: Number(toy.price),
+      quantity: Number(toy.quantity),
+      rating: Number(toy.rating),
+      category: toy.subCategory,
+      sellerName: toy.sellerName,
+      sellerEmail: toy.email,
+      description: toy.description,
     };
-    fetch(`https://toytopia-server-xi.vercel.app/toys/${_id}`, {
-      method: "PUT",
+    fetch("http://localhost:5000/toys", {
+      method: "POST",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(updatedToy),
+      body: JSON.stringify(toyData),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
-          toast.success("Toy updated successfully!", {
+        if (data.acknowledged) {
+          toast.success("Toy added successfully!", {
             position: "top-center",
           });
         }
@@ -51,118 +56,99 @@ const UpdateToy = () => {
     <div className="py-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">update toy</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Add Toy</h2>
         </div>
 
         <div>
-          <form onSubmit={updateToyHandler}>
+          <form onSubmit={addToyHandler}>
             <div className="space-y-3 max-w-2xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <select
-                  name="subCategory"
-                  disabled
-                  onChange={changeHandler}
-                  className="select select-secondary w-full order-1"
-                  defaultValue={"sub-category"}
-                >
+                <select name="subCategory" onChange={blurHandler} className="select select-secondary w-full order-1" defaultValue={"sub-category"}>
                   <option disabled value="sub-category">
                     sub-category
                   </option>
-                  <option disabled value="STEM">
-                    STEM
-                  </option>
-                  <option disabled value="Creative Arts and Crafts">
-                    Creative Arts and Crafts
-                  </option>
-                  <option disabled value="Language and Literacy">
-                    Language and Literacy
-                  </option>
+                  <option value="STEM">STEM</option>
+                  <option value="Creative Arts and Crafts">Creative Arts and Crafts</option>
+                  <option value="Language and Literacy">Language and Literacy</option>
                 </select>
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-2"
                   type="text"
                   name="toyName"
                   placeholder="Enter toy name"
                   required
-                  defaultValue={toyName}
-                  disabled
                 />
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-3"
                   type="url"
                   name="photo"
                   placeholder="Enter toy image URL"
                   required
-                  disabled
                 />
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-4"
                   type="number"
                   name="price"
                   placeholder="Enter toy price"
                   required
-                  defaultValue={price}
                 />
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-5"
                   type="number"
                   name="rating"
                   placeholder="Enter toy rating"
                   required
-                  disabled
                 />
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-6"
                   type="number"
                   name="quantity"
                   placeholder="Enter toy quantity"
                   required
-                  defaultValue={quantity}
                 />
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-7"
                   type="text"
                   name="description"
                   placeholder="Enter description"
                   required
-                  defaultValue={description}
                 />
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-8"
                   type="text"
                   name="sellerName"
                   placeholder="Enter seller name"
                   required
-                  disabled
+                  defaultValue={user?.name}
                 />
 
                 <input
-                  onChange={changeHandler}
+                  onChange={blurHandler}
                   className="input input-bordered input-secondary w-full order-9"
                   type="email"
                   name="email"
                   placeholder="Enter seller email"
                   required
-                  disabled
+                  defaultValue={user?.email}
                 />
 
                 <div className="order-10">
                   <button className="btn btn-accent w-full text-white" type="submit">
-                    Update
+                    Add
                   </button>
                   <ToastContainer></ToastContainer>
                 </div>
@@ -177,4 +163,4 @@ const UpdateToy = () => {
   );
 };
 
-export default UpdateToy;
+export default AddToy;

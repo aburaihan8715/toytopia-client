@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logo/toytopia-logo.png";
+import logo from "../assets/images/logo/toytopia-logo.png";
 
 const Footer = () => {
   return (
