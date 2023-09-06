@@ -2,7 +2,7 @@ import logo from "../assets/images/logo/toytopia-logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-neutral-200">
+    <div className="bg-base-100">
       <footer className="footer p-10  text-base-content">
         <div>
           <span className="footer-title">Services</span>

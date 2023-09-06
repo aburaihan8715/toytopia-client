@@ -1,0 +1,11 @@
+// completed tasks
+
+
+
+
+
+// pending tasks
+1. user photo update should be another form
+2. animation have to add
+3. scroll to top implement
+4. lottie image implement

@@ -1,14 +1,14 @@
 const Testimonials = () => {
   return (
-    <div>
-      <div className="max-w-5xl my-24 px-6 mx-auto">
-        <section className="mb-32 text-gray-800 text-center">
-          <div className="text-center mb-8">
+    <section className="my-10 px-2 sm:px-10">
+      <div className="border">
+        <div className=" text-gray-800 text-center border py-10">
+          <div className="text-center mb-14">
             <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">testimonials</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
-            <div className="mb-12 md:mb-0">
+          <div className="grid md:grid-cols-3 gap-10  px-10">
+            <div className="mb-12 md:mb-0 border p-5 rounded shadow-md hover:shadow-lg transition duration-100">
               <div className="flex justify-center mb-6">
                 <img loading="lazy" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" className="rounded-full shadow-lg w-32" />
               </div>
@@ -120,7 +120,8 @@ const Testimonials = () => {
                 </li>
               </ul>
             </div>
-            <div className="mb-12 md:mb-0">
+
+            <div className="mb-12 md:mb-0 border p-5 rounded shadow-md hover:shadow-lg transition duration-100">
               <div className="flex justify-center mb-6">
                 <img loading="lazy" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg" className="rounded-full shadow-lg w-32" />
               </div>
@@ -232,7 +233,8 @@ const Testimonials = () => {
                 </li>
               </ul>
             </div>
-            <div className="mb-0">
+
+            <div className="mb-0 border p-5 rounded shadow-md hover:shadow-lg transition duration-100">
               <div className="flex justify-center mb-6">
                 <img loading="lazy" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" className="rounded-full shadow-lg w-32" />
               </div>
@@ -254,7 +256,7 @@ const Testimonials = () => {
                     d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
                   ></path>
                 </svg>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
               </p>
               <ul className="flex justify-center mb-0">
                 <li>
@@ -345,9 +347,9 @@ const Testimonials = () => {
               </ul>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

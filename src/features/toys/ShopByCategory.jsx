@@ -27,91 +27,93 @@ const ShopByCategory = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div className="py-8">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center">
+    <div className="py-8 px-2 sm:px-10">
+      <div className="">
+        <div className="text-center mb-10">
           <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Shop by category</h2>
         </div>
 
-        <Tabs forceRenderTabPanel defaultIndex={1}>
-          <TabList>
-            <Tab>STEM</Tab>
-            <Tab>Creative Arts and Crafts</Tab>
-            <Tab>Language and Literacy</Tab>
-          </TabList>
+        <div className="">
+          <Tabs forceRenderTabPanel defaultIndex={1}>
+            <TabList>
+              <Tab>STEM</Tab>
+              <Tab>Creative Arts and Crafts</Tab>
+              <Tab>Language and Literacy</Tab>
+            </TabList>
 
-          <TabPanel>
-            <div className="mt-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {stemCategory?.map((item) => (
-                  <div key={item._id} className="card border rounded-lg">
-                    <figure className="h-60">
-                      <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="toy" />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title capitalize">{item.toyName}</h2>
-                      <p>Price : {item.price}</p>
-                      <p>Rating : {item.rating}</p>
-                      <div className="card-actions justify-end">
-                        <Link to={`/viewDetails/${item._id}`}>
-                          <button className="btn btn-accent">view details</button>
-                        </Link>
+            <TabPanel>
+              <div className="mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+                  {stemCategory?.map((item) => (
+                    <div key={item._id} className="card border rounded-lg">
+                      <figure className="h-40">
+                        <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="toy" />
+                      </figure>
+                      <div className="card-body">
+                        <h2 className="card-title capitalize">{item.toyName}</h2>
+                        <p>Price : {item.price}</p>
+                        <p>Rating : {item.rating}</p>
+                        <div className="card-actions justify-end">
+                          <Link to={`/viewDetails/${item._id}`}>
+                            <button className="btn btn-accent">view details</button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </TabPanel>
+            </TabPanel>
 
-          <TabPanel>
-            <div className="mt-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {creativeArtsAndCraftsCategory?.map((item) => (
-                  <div key={item._id} className="card border rounded-lg">
-                    <figure className="h-60">
-                      <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title capitalize">{item.toyName}</h2>
-                      <p>Price : {item.price}</p>
-                      <p>Rating : {item.rating}</p>
-                      <div className="card-actions justify-end">
-                        <Link to={`/viewDetails/${item._id}`}>
-                          <button className="btn btn-accent">view details</button>
-                        </Link>
+            <TabPanel>
+              <div className="mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+                  {creativeArtsAndCraftsCategory?.map((item) => (
+                    <div key={item._id} className="card border rounded-lg">
+                      <figure className="h-40">
+                        <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
+                      </figure>
+                      <div className="card-body">
+                        <h2 className="card-title capitalize">{item.toyName}</h2>
+                        <p>Price : {item.price}</p>
+                        <p>Rating : {item.rating}</p>
+                        <div className="card-actions justify-end">
+                          <Link to={`/viewDetails/${item._id}`}>
+                            <button className="btn btn-accent">view details</button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </TabPanel>
+            </TabPanel>
 
-          <TabPanel>
-            <div className="mt-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {languageAndLiteracyCategory?.map((item) => (
-                  <div key={item._id} className="card border rounded-lg">
-                    <figure className="h-60">
-                      <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title capitalize">{item.toyName}</h2>
-                      <p>Price : {item.price}</p>
-                      <p>Rating : {item.rating}</p>
-                      <div className="card-actions justify-end">
-                        <Link to={`/viewDetails/${item._id}`}>
-                          <button className="btn btn-accent">view details</button>
-                        </Link>
+            <TabPanel>
+              <div className="mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+                  {languageAndLiteracyCategory?.map((item) => (
+                    <div key={item._id} className="card border rounded-lg">
+                      <figure className="h-40">
+                        <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
+                      </figure>
+                      <div className="card-body">
+                        <h2 className="card-title capitalize">{item.toyName}</h2>
+                        <p>Price : {item.price}</p>
+                        <p>Rating : {item.rating}</p>
+                        <div className="card-actions justify-end">
+                          <Link to={`/viewDetails/${item._id}`}>
+                            <button className="btn btn-accent">view details</button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </TabPanel>
-        </Tabs>
+            </TabPanel>
+          </Tabs>
+        </div>
       </div>
     </div>
   );

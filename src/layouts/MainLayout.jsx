@@ -4,7 +4,7 @@ import Footer from "../ui/Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="flex flex-col justify-between min-h-screen">
       <Header></Header>
       <div className="mt-20">
         <Outlet></Outlet>
