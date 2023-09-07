@@ -11,7 +11,7 @@ const MyToys = () => {
   useTitle("MyToys");
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://toytopia-server-xi.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

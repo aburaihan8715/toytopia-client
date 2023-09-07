@@ -15,7 +15,7 @@ const MyToysRow = (props) => {
       confirmButtonText: "Yes!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${id}`, {
+        fetch(`https://toytopia-server-xi.vercel.app/toys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

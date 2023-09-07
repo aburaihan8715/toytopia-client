@@ -36,7 +36,7 @@ const AddToy = () => {
     }
     // console.log(toyData);
 
-    fetch("http://localhost:5000/toys", {
+    fetch("https://toytopia-server-xi.vercel.app/toys", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
