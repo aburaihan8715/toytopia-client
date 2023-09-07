@@ -4,10 +4,11 @@ import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../contexts/AuthProvider";
 import SocialLogin from "../features/authentication/SocialLogin";
 import useTitle from "../hooks/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUsingEmailAndPassword, setUser, setError, error } = useContext(AuthContext);
+  const { loginUsingEmailAndPassword, setError, error } = useContext(AuthContext);
   useTitle("Login");
 
   const navigate = useNavigate();
@@ -27,8 +28,8 @@ const Login = () => {
     loginUsingEmailAndPassword(email, password)
       .then((result) => {
         const user = result.user;
-        alert("Login success!!");
-        setUser(user);
+        console.log(user);
+        toast.success("Login success!!");
         setError("");
         navigate(from, { replace: true });
       })
@@ -42,15 +43,15 @@ const Login = () => {
 
   return (
     <div className="py-3">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-md mx-auto border px-2 sm:px-10 py-10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">login</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">login</h2>
         </div>
 
         <div className="text-center mb-2">
           <small>
             New user?
-            <Link className="text-accent" to="/register">
+            <Link className="text-error" to="/register">
               <strong> Register </strong>
             </Link>
             here.
@@ -78,7 +79,7 @@ const Login = () => {
           <div className="space-y-3 max-w-lg mx-auto">
             <div className="">
               <input
-                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
+                className="border border-error rounded p-3 w-full focus:outline-none focus:ring-2 ring-error"
                 type="email"
                 name="email"
                 id="email"
@@ -89,7 +90,7 @@ const Login = () => {
 
             <div className="relative">
               <input
-                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
+                className="border border-error rounded p-3 w-full focus:outline-none focus:ring-2 ring-error"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -106,10 +107,11 @@ const Login = () => {
               <button className="btn btn-accent w-full rounded text-white" type="submit">
                 Login
               </button>
+              <Toaster position="top-center" reverseOrder={false} />
             </div>
 
             <div className="text-end">
-              <small className="text-accent">
+              <small className="text-error">
                 <Link to="/forgetPassword">
                   <strong>Forget Password?</strong>
                 </Link>

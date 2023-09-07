@@ -4,6 +4,7 @@ import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { AuthContext } from "../contexts/AuthProvider";
 import useTitle from "../hooks/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 const auth = getAuth(app);
 
 const ForgetPassword = () => {
@@ -24,7 +25,7 @@ const ForgetPassword = () => {
   const passwordResetEmail = (email) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert("Please check your mail!!");
+        toast.success("Please check your mail!!");
         setError("");
       })
       .catch((error) => {
@@ -34,11 +35,11 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto">
-      <div className="max-w-lg mx-auto">
+    <div className="py-10">
+      <div className="max-w-sm mx-auto border p-10">
         <div className="mt-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">forget password</h2>
+            <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">forget password</h2>
           </div>
 
           {/* error message */}
@@ -62,7 +63,7 @@ const ForgetPassword = () => {
             <div className="space-y-3 max-w-lg mx-auto">
               <div className="w-full">
                 <input
-                  className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
+                  className="border border-error rounded p-3 w-full focus:outline-none focus:ring-2 ring-error"
                   type="email"
                   name="email"
                   id="email"
@@ -75,13 +76,14 @@ const ForgetPassword = () => {
                 <button className="btn btn-accent text-white rounded w-full" type="submit">
                   Submit
                 </button>
+                <Toaster position="top-center" reverseOrder={false} />
               </div>
             </div>
           </form>
           {/* go back */}
           <div className=" text-right">
             <small onClick={() => navigate(-1)} className="text-accent underline cursor-pointer">
-              <strong>Go back</strong>
+              <strong className="text-error">Go back</strong>
             </small>
           </div>
         </div>

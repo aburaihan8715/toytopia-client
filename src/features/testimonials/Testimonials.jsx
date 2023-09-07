@@ -4,7 +4,7 @@ const Testimonials = () => {
       <div className="border">
         <div className=" text-gray-800 text-center border py-10">
           <div className="text-center mb-14">
-            <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">testimonials</h2>
+            <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">testimonials</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10  px-10">

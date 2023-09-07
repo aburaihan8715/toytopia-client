@@ -9,7 +9,7 @@ const ShopByCategory = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://toytopia-server-xi.vercel.app/toys")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -30,7 +30,7 @@ const ShopByCategory = () => {
     <div className="py-8 px-2 sm:px-10">
       <div className="">
         <div className="text-center mb-10">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Shop by category</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">Shop by category</h2>
         </div>
 
         <div className="">
@@ -45,7 +45,7 @@ const ShopByCategory = () => {
               <div className="mt-8">
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
                   {stemCategory?.map((item) => (
-                    <div key={item._id} className="card border rounded-lg">
+                    <div data-aos="zoom-in" key={item._id} className="card border rounded-lg">
                       <figure className="h-40">
                         <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="toy" />
                       </figure>
@@ -55,7 +55,7 @@ const ShopByCategory = () => {
                         <p>Rating : {item.rating}</p>
                         <div className="card-actions justify-end">
                           <Link to={`/viewDetails/${item._id}`}>
-                            <button className="btn btn-accent">view details</button>
+                            <button className="btn btn-accent btn-sm rounded">view details</button>
                           </Link>
                         </div>
                       </div>
@@ -69,7 +69,7 @@ const ShopByCategory = () => {
               <div className="mt-8">
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
                   {creativeArtsAndCraftsCategory?.map((item) => (
-                    <div key={item._id} className="card border rounded-lg">
+                    <div data-aos="zoom-in" key={item._id} className="card border rounded-lg">
                       <figure className="h-40">
                         <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
                       </figure>
@@ -79,7 +79,7 @@ const ShopByCategory = () => {
                         <p>Rating : {item.rating}</p>
                         <div className="card-actions justify-end">
                           <Link to={`/viewDetails/${item._id}`}>
-                            <button className="btn btn-accent">view details</button>
+                            <button className="btn btn-accent btn-sm rounded">view details</button>
                           </Link>
                         </div>
                       </div>
@@ -93,7 +93,7 @@ const ShopByCategory = () => {
               <div className="mt-8">
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
                   {languageAndLiteracyCategory?.map((item) => (
-                    <div key={item._id} className="card border rounded-lg">
+                    <div data-aos="zoom-in" key={item._id} className="card border rounded-lg">
                       <figure className="h-40">
                         <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
                       </figure>
@@ -103,7 +103,7 @@ const ShopByCategory = () => {
                         <p>Rating : {item.rating}</p>
                         <div className="card-actions justify-end">
                           <Link to={`/viewDetails/${item._id}`}>
-                            <button className="btn btn-accent">view details</button>
+                            <button className="btn btn-accent btn-sm rounded">view details</button>
                           </Link>
                         </div>
                       </div>

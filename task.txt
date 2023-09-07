@@ -5,7 +5,11 @@
 
 
 // pending tasks
-1. user photo update should be another form
+1. follow the assignment instructions
 2. animation have to add
 3. scroll to top implement
 4. lottie image implement
+5. use background image instead background color
+6. user photo update should be another form
+7. form should have label*
+8. add toy has issue

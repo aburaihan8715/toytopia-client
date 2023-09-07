@@ -13,6 +13,7 @@ import AddToy from "../pages/AddToy";
 import UpdateToy from "../pages/UpdateToy";
 import ShopByCategory from "../features/toys/ShopByCategory";
 import ToyDetails from "../pages/ToyDetails";
+import BuyNow from "../pages/BuyNow";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/allToy",
         element: <AllToy></AllToy>,
-        loader: () => fetch("https://toytopia-server-xi.vercel.app/toys"),
+        loader: () => fetch("http://localhost:5000/toys"),
       },
       {
         path: "/myToys",
@@ -64,11 +65,15 @@ const router = createBrowserRouter([
       {
         path: "/updateToy/:id",
         element: <UpdateToy></UpdateToy>,
-        loader: ({ params }) => fetch(`https://toytopia-server-xi.vercel.app/toys/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`),
       },
       {
         path: "/shopByCategory",
         element: <ShopByCategory></ShopByCategory>,
+      },
+      {
+        path: "/buyNow",
+        element: <BuyNow></BuyNow>,
       },
       {
         path: "/viewDetails/:id",
@@ -77,7 +82,7 @@ const router = createBrowserRouter([
             <ToyDetails></ToyDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`https://toytopia-server-xi.vercel.app/toys/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`),
       },
     ],
   },

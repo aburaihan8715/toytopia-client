@@ -4,10 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
 import SocialLogin from "../features/authentication/SocialLogin";
 import useTitle from "../hooks/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUserUsingEmailAndPassword, setUser, setError, error } = useContext(AuthContext);
+  const { createUserUsingEmailAndPassword, setError, error } = useContext(AuthContext);
   useTitle("Register");
   const navigate = useNavigate();
 
@@ -49,8 +50,8 @@ const Register = () => {
     createUserUsingEmailAndPassword(email, password)
       .then((result) => {
         const user = result.user;
-        alert("User has been created successfully!!");
-        setUser(user);
+        console.log(user);
+        toast.success("User created successfully!!");
         setError("");
         navigate("/");
       })
@@ -79,16 +80,16 @@ const Register = () => {
 
   return (
     <div className="py-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-md mx-auto border p-10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">register</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">register</h2>
         </div>
 
         <div className="text-center mb-2">
           <small>
             Already user?
             <Link className="text-accent" to="/login">
-              <strong> Login </strong>
+              <strong className="text-error"> Login </strong>
             </Link>
             here.
           </small>
@@ -115,7 +116,7 @@ const Register = () => {
           <div className="space-y-3 max-w-lg mx-auto">
             <div className="">
               <input
-                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
+                className="border border-error rounded p-3 w-full focus:outline-none focus:ring-1 ring-error"
                 type="text"
                 name="name"
                 id="name"
@@ -125,7 +126,7 @@ const Register = () => {
             </div>
             <div className="">
               <input
-                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
+                className="border border-error rounded p-3 w-full focus:outline-none focus:ring-1 ring-error"
                 type="url"
                 name="photoURL"
                 id="photoURL"
@@ -135,7 +136,7 @@ const Register = () => {
             </div>
             <div className="">
               <input
-                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
+                className="border border-error rounded p-3 w-full focus:outline-none focus:ring-1 ring-error"
                 type="email"
                 name="email"
                 id="email"
@@ -145,7 +146,7 @@ const Register = () => {
             </div>
             <div className="relative">
               <input
-                className="border border-secondary rounded p-3 w-full focus:outline-none focus:ring-2 ring-secondary"
+                className="border border-error rounded p-3 w-full focus:outline-none focus:ring-1 ring-error"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -162,6 +163,7 @@ const Register = () => {
               <button className="btn btn-accent w-full rounded text-white" type="submit">
                 Register
               </button>
+              <Toaster position="top-center" reverseOrder={false} />
             </div>
           </div>
         </form>

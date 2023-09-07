@@ -3,7 +3,7 @@ const Gallery = () => {
     <div className="py-8 bg-red-50">
       <div className="px-2 sm:px-10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Gallery</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">Gallery</h2>
         </div>
         <div className="grid  sm:grid-cols-4 gap-4">
           <div className="row-start-1 row-end-1 col-start-1 col-end-2">

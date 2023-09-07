@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const MyToysRow = (props) => {
   const { category, price, quantity, sellerName, toyName, toyPhotoUrl, _id } = props.myToyData;
@@ -8,26 +7,30 @@ const MyToysRow = (props) => {
   const setToysData = props.setToysData;
 
   const deleteHandler = (id) => {
-    const agree = window.confirm("Sure! want to delete?");
-    if (agree) {
-      fetch(`https://toytopia-server-xi.vercel.app/toys/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            toast.success("Toy added successfully!", {
-              position: "top-center",
-            });
-          }
-
-          const remainingToysData = toysData?.filter((toyData) => toyData._id !== id);
-          setToysData(remainingToysData);
+    Swal.fire({
+      title: "Are you sure?",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toys/${id}`, {
+          method: "DELETE",
         })
-        .catch((err) => {
-          console.log(err.message);
-        });
-    }
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const remainingToysData = toysData?.filter((toyData) => toyData._id !== id);
+              setToysData(remainingToysData);
+              Swal.fire("Deletion success!!");
+            }
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      }
+    });
   };
 
   return (
@@ -61,7 +64,6 @@ const MyToysRow = (props) => {
           <button onClick={() => deleteHandler(_id)} className="btn btn-warning btn-xs">
             delete
           </button>
-          <ToastContainer></ToastContainer>
         </div>
       </td>
     </tr>

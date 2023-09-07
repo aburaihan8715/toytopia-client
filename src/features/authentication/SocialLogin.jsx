@@ -25,8 +25,8 @@ const SocialLogin = () => {
     <div className="max-w-5xl mx-auto px-2">
       {/* google login */}
       <div className="text-center mt-4 flex justify-center">
-        <div className="text-center">
-          <button onClick={googleAuthenticationHandler} className="btn btn-outline btn-secondary rounded w-full flex justify-between px-10">
+        <div className="text-center w-full">
+          <button onClick={googleAuthenticationHandler} className="btn btn-outline btn-accent rounded w-full flex justify-between px-10">
             <span>
               <img loading="lazy" src="https://i.ibb.co/72bXZqD/google.png" width="24px" height="24px" alt="google" />
             </span>

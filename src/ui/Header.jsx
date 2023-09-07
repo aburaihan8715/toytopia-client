@@ -86,7 +86,7 @@ const Header = () => {
         <div className="w-full navbar-end space-x-2">
           <div className="flex gap-2 justify-center items-center">
             {user?.photoURL && (
-              <label title={user.displayName} tabIndex={0} className="btn btn-ghost btn-circle avatar inline-block">
+              <label title={user.displayName} tabIndex={0} className="btn  btn-circle avatar">
                 <div className="w-12 rounded-full">
                   <img className="" loading="lazy" src={user.photoURL} />
                 </div>
@@ -94,7 +94,7 @@ const Header = () => {
             )}
 
             {user && !user?.photoURL && (
-              <label title={user.displayName} tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <label title={user.displayName} tabIndex={0} className="btn  btn-circle avatar">
                 <div className="w-12 rounded-full">
                   <img className="" loading="lazy" src="http://placehold.it/50x50" />
                 </div>
@@ -102,7 +102,7 @@ const Header = () => {
             )}
 
             {user?.uid && (
-              <button onClick={logOutHandler} className="btn btn-accent rounded text-white">
+              <button onClick={logOutHandler} className="btn btn-error hover:bg-red-900 rounded text-white">
                 LogOut
               </button>
             )}

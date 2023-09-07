@@ -1,8 +1,7 @@
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import useTitle from "../hooks/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const UpdateToy = () => {
   const [toyData, setToyData] = useState({});
@@ -22,11 +21,14 @@ const UpdateToy = () => {
     event.preventDefault();
 
     const updatedToy = {
-      quantity: toyData.quantity,
-      price: toyData.price,
-      description: toyData.description,
+      quantity: toyData.quantity || quantity,
+      price: toyData.price || price,
+      description: toyData.description || description,
     };
-    fetch(`https://toytopia-server-xi.vercel.app/toys/${_id}`, {
+
+    // console.log(updatedToy);
+
+    fetch(`http://localhost:5000/toys/${_id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -36,9 +38,7 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          toast.success("Toy updated successfully!", {
-            position: "top-center",
-          });
+          toast.success("Successfully updated!");
         }
         event.target.reset();
       })
@@ -51,7 +51,7 @@ const UpdateToy = () => {
     <div className="py-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">update toy</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">update toy</h2>
         </div>
 
         <div>
@@ -63,10 +63,10 @@ const UpdateToy = () => {
                   disabled
                   onChange={changeHandler}
                   className="select select-secondary w-full order-1"
-                  defaultValue={"sub-category"}
+                  defaultValue="sub category"
                 >
-                  <option disabled value="sub-category">
-                    sub-category
+                  <option disabled defaultValue="sub category">
+                    sub category
                   </option>
                   <option disabled value="STEM">
                     STEM
@@ -164,7 +164,7 @@ const UpdateToy = () => {
                   <button className="btn btn-accent w-full text-white" type="submit">
                     Update
                   </button>
-                  <ToastContainer></ToastContainer>
+                  <Toaster position="top-center" reverseOrder={false} />
                 </div>
               </div>
 

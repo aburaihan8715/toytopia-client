@@ -3,10 +3,10 @@ import useTitle from "../hooks/useTitle";
 const Blogs = () => {
   useTitle("Blogs");
   return (
-    <div className="py-8">
+    <div className="py-8 px-2">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">our blogs</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">our blogs</h2>
         </div>
         <div className="space-y-4 max-w-4xl mx-auto">
           <div>

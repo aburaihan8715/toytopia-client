@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../hooks/useTitle";
 
 const ToyDetails = () => {
@@ -8,7 +8,7 @@ const ToyDetails = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen">
+      <div className="hero sm:min-h-screen">
         <div className="hero-content flex-col lg:flex-row space-x-4">
           <img src={toyPhotoUrl} className="w-full max-w-xl rounded-lg shadow-xl" />
 
@@ -33,11 +33,16 @@ const ToyDetails = () => {
               </p>
             </div>
 
-            <div className="flex justify-start">
+            <div className="flex justify-between">
               <div className="border rounded p-2">
                 <h4>seller info :</h4>
                 <p>Name : {sellerName}</p>
                 <p>Email : {sellerEmail}</p>
+              </div>
+              <div className="flex items-end">
+                <Link to="/buyNow" className="btn btn-accent btn-sm rounded">
+                  buy now
+                </Link>
               </div>
             </div>
           </div>

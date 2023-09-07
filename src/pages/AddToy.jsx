@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import useTitle from "../hooks/useTitle";
+import { Toaster, toast } from "react-hot-toast";
 
 const AddToy = () => {
   const [toy, setToy] = useState({});
@@ -19,7 +19,6 @@ const AddToy = () => {
 
   const addToyHandler = (event) => {
     event.preventDefault();
-    console.log(toy);
     const toyData = {
       toyName: toy.toyName,
       toyPhotoUrl: toy.photo,
@@ -28,10 +27,16 @@ const AddToy = () => {
       rating: Number(toy.rating),
       category: toy.subCategory,
       sellerName: toy.sellerName,
-      sellerEmail: toy.email,
+      sellerEmail: toy.email || user.email,
       description: toy.description,
     };
-    fetch("https://toytopia-server-xi.vercel.app/toys", {
+
+    if (!toyData.category) {
+      return toast.error("You have to select category!!");
+    }
+    // console.log(toyData);
+
+    fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -41,9 +46,7 @@ const AddToy = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast.success("Toy added successfully!", {
-            position: "top-center",
-          });
+          toast.success("Addition success!");
         }
         event.target.reset();
       })
@@ -53,19 +56,19 @@ const AddToy = () => {
   };
 
   return (
-    <div className="py-8">
+    <div className="py-8 px-2">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-secondary">Add Toy</h2>
+          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">Add Toy</h2>
         </div>
 
         <div>
           <form onSubmit={addToyHandler}>
             <div className="space-y-3 max-w-2xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <select name="subCategory" onChange={blurHandler} className="select select-secondary w-full order-1" defaultValue={"sub-category"}>
-                  <option disabled value="sub-category">
-                    sub-category
+                <select name="subCategory" onBlur={blurHandler} className="select select-error w-full order-1" defaultValue="select category">
+                  <option disabled defaultValue="">
+                    select category
                   </option>
                   <option value="STEM">STEM</option>
                   <option value="Creative Arts and Crafts">Creative Arts and Crafts</option>
@@ -73,8 +76,8 @@ const AddToy = () => {
                 </select>
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-2"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-2"
                   type="text"
                   name="toyName"
                   placeholder="Enter toy name"
@@ -82,8 +85,8 @@ const AddToy = () => {
                 />
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-3"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-3"
                   type="url"
                   name="photo"
                   placeholder="Enter toy image URL"
@@ -91,8 +94,8 @@ const AddToy = () => {
                 />
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-4"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-4"
                   type="number"
                   name="price"
                   placeholder="Enter toy price"
@@ -100,8 +103,8 @@ const AddToy = () => {
                 />
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-5"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-5"
                   type="number"
                   name="rating"
                   placeholder="Enter toy rating"
@@ -109,8 +112,8 @@ const AddToy = () => {
                 />
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-6"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-6"
                   type="number"
                   name="quantity"
                   placeholder="Enter toy quantity"
@@ -118,8 +121,8 @@ const AddToy = () => {
                 />
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-7"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-7"
                   type="text"
                   name="description"
                   placeholder="Enter description"
@@ -127,8 +130,8 @@ const AddToy = () => {
                 />
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-8"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-8"
                   type="text"
                   name="sellerName"
                   placeholder="Enter seller name"
@@ -137,8 +140,8 @@ const AddToy = () => {
                 />
 
                 <input
-                  onChange={blurHandler}
-                  className="input input-bordered input-secondary w-full order-9"
+                  onBlur={blurHandler}
+                  className="input input-bordered input-error w-full order-9"
                   type="email"
                   name="email"
                   placeholder="Enter seller email"
@@ -148,9 +151,9 @@ const AddToy = () => {
 
                 <div className="order-10">
                   <button className="btn btn-accent w-full text-white" type="submit">
-                    Add
+                    Submit
                   </button>
-                  <ToastContainer></ToastContainer>
+                  <Toaster position="top-center" reverseOrder={true} />
                 </div>
               </div>
 
