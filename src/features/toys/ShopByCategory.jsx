@@ -37,19 +37,19 @@ const ShopByCategory = () => {
           <Tabs forceRenderTabPanel defaultIndex={1}>
             <TabList className="flex gap-5">
               <Tab
-                style={{ backgroundColor: "red", borderRadius: "5px", padding: "5px", color: "#fff" }}
+                style={{ border: "1px solid gray", borderRadius: "5px", padding: "5px", color: "#555" }}
                 className="transition-all duration-500 outline-none cursor-pointer"
               >
                 STEM
               </Tab>
               <Tab
-                style={{ backgroundColor: "red", borderRadius: "5px", padding: "5px", color: "#fff" }}
+                style={{ border: "1px solid gray", borderRadius: "5px", padding: "5px", color: "#555" }}
                 className="transition-all duration-500 outline-none cursor-pointer"
               >
                 Creative Arts and Crafts
               </Tab>
               <Tab
-                style={{ backgroundColor: "red", borderRadius: "5px", padding: "5px", color: "#fff" }}
+                style={{ border: "1px solid gray", borderRadius: "5px", padding: "5px", color: "#555" }}
                 className="transition-all duration-500 outline-none cursor-pointer"
               >
                 Language and Literacy
