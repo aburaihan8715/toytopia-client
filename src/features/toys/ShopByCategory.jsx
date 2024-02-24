@@ -27,35 +27,50 @@ const ShopByCategory = () => {
     return <LoadingSpinner></LoadingSpinner>;
   }
   return (
-    <div className="py-8 px-2 sm:px-10">
+    <div className="px-2 py-8 sm:px-10">
       <div className="">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl inline-block underline underline-offset-8 uppercase font-semibold text-error">Shop by category</h2>
+        <div className="mb-10 text-center">
+          <h2 className="inline-block text-3xl font-semibold underline uppercase underline-offset-8 text-error">Shop by category</h2>
         </div>
 
         <div className="">
           <Tabs forceRenderTabPanel defaultIndex={1}>
-            <TabList>
-              <Tab>STEM</Tab>
-              <Tab>Creative Arts and Crafts</Tab>
-              <Tab>Language and Literacy</Tab>
+            <TabList className="flex gap-5">
+              <Tab
+                style={{ backgroundColor: "red", borderRadius: "5px", padding: "5px", color: "#fff" }}
+                className="transition-all duration-500 outline-none cursor-pointer"
+              >
+                STEM
+              </Tab>
+              <Tab
+                style={{ backgroundColor: "red", borderRadius: "5px", padding: "5px", color: "#fff" }}
+                className="transition-all duration-500 outline-none cursor-pointer"
+              >
+                Creative Arts and Crafts
+              </Tab>
+              <Tab
+                style={{ backgroundColor: "red", borderRadius: "5px", padding: "5px", color: "#fff" }}
+                className="transition-all duration-500 outline-none cursor-pointer"
+              >
+                Language and Literacy
+              </Tab>
             </TabList>
 
             <TabPanel>
               <div className="mt-8">
-                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:grid-cols-4">
                   {stemCategory?.map((item) => (
-                    <div data-aos="zoom-in" key={item._id} className="card border rounded-lg">
+                    <div data-aos="zoom-in" key={item._id} className="border rounded-lg card">
                       <figure className="h-40">
-                        <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="toy" />
+                        <img className="object-cover w-full h-full" src={item.toyPhotoUrl} alt="toy" />
                       </figure>
                       <div className="card-body">
-                        <h2 className="card-title capitalize">{item.toyName}</h2>
+                        <h2 className="capitalize card-title">{item.toyName}</h2>
                         <p>Price : {item.price}</p>
                         <p>Rating : {item.rating}</p>
-                        <div className="card-actions justify-end">
+                        <div className="justify-end card-actions">
                           <Link to={`/viewDetails/${item._id}`}>
-                            <button className="btn btn-accent btn-sm rounded">view details</button>
+                            <button className="rounded btn btn-accent btn-sm">view details</button>
                           </Link>
                         </div>
                       </div>
@@ -67,19 +82,19 @@ const ShopByCategory = () => {
 
             <TabPanel>
               <div className="mt-8">
-                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:grid-cols-4">
                   {creativeArtsAndCraftsCategory?.map((item) => (
-                    <div data-aos="zoom-in" key={item._id} className="card border rounded-lg">
+                    <div data-aos="zoom-in" key={item._id} className="border rounded-lg card">
                       <figure className="h-40">
-                        <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
+                        <img className="object-cover w-full h-full" src={item.toyPhotoUrl} alt="car!" />
                       </figure>
                       <div className="card-body">
-                        <h2 className="card-title capitalize">{item.toyName}</h2>
+                        <h2 className="capitalize card-title">{item.toyName}</h2>
                         <p>Price : {item.price}</p>
                         <p>Rating : {item.rating}</p>
-                        <div className="card-actions justify-end">
+                        <div className="justify-end card-actions">
                           <Link to={`/viewDetails/${item._id}`}>
-                            <button className="btn btn-accent btn-sm rounded">view details</button>
+                            <button className="rounded btn btn-accent btn-sm">view details</button>
                           </Link>
                         </div>
                       </div>
@@ -91,19 +106,19 @@ const ShopByCategory = () => {
 
             <TabPanel>
               <div className="mt-8">
-                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:grid-cols-4">
                   {languageAndLiteracyCategory?.map((item) => (
-                    <div data-aos="zoom-in" key={item._id} className="card border rounded-lg">
+                    <div data-aos="zoom-in" key={item._id} className="border rounded-lg card">
                       <figure className="h-40">
-                        <img className="w-full h-full object-cover" src={item.toyPhotoUrl} alt="car!" />
+                        <img className="object-cover w-full h-full" src={item.toyPhotoUrl} alt="car!" />
                       </figure>
                       <div className="card-body">
-                        <h2 className="card-title capitalize">{item.toyName}</h2>
+                        <h2 className="capitalize card-title">{item.toyName}</h2>
                         <p>Price : {item.price}</p>
                         <p>Rating : {item.rating}</p>
-                        <div className="card-actions justify-end">
+                        <div className="justify-end card-actions">
                           <Link to={`/viewDetails/${item._id}`}>
-                            <button className="btn btn-accent btn-sm rounded">view details</button>
+                            <button className="rounded btn btn-accent btn-sm">view details</button>
                           </Link>
                         </div>
                       </div>

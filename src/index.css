@@ -6,3 +6,7 @@
   color: #fff !important;
   background: #5aa31b !important;
 }
+
+.react-tabs__tab--selected {
+  background-color: darkgreen !important;
+}
